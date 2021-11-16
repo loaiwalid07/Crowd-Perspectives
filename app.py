@@ -273,6 +273,61 @@ def visi (df,df_age,df_hash):
 
 
 
+
+
+#################################### Third Column ########################################
+  side,chart8, chart9,chart10 = st.columns([0.30,1,1,1])
+  def count_word(dataa,n):
+      symbols = ['.', '£', '-', '!', '(', ')', ':', ',',"'",']','[']
+
+      l=""
+      for i in range(len(dataa)):
+        l= l + str(dataa.iloc[i])
+      for i in symbols:
+        l=l.replace(i,'')
+
+      split_it = l.split()
+
+      freq_dist_pos = FreqDist(split_it).most_common(n)
+      item=[]
+      values=[]
+
+      for i,j in freq_dist_pos:
+        item.append(i)
+        values.append(j)
+      return item,values
+
+  with chart8:
+      pos_s = pd.DataFrame(df["clean_text"].loc[df["sentiment"] == "positive"])
+      
+
+      
+      with st.expander("Most Positive Words", True):
+          
+          st.write(px.bar(x=count_word(pos_s["clean_text"],10)[1],y= count_word(pos_s["clean_text"],10)[0],text=count_word(pos_s["clean_text"],10)[1]
+                          ,orientation='h',color=count_word(pos_s["clean_text"],10)[0]
+                      ,color_discrete_sequence=plat,labels={"x": "","y": ""},
+                    width=400,title="Most Positive Words").update_layout(layout).update_traces(showlegend=False))
+
+
+
+  with chart9:
+      neg_s = pd.DataFrame(df["clean_text"].loc[df["sentiment"] == "negative"])
+      
+
+      
+      with st.expander("Most Negative Words", True):
+          
+          st.write(px.bar(x=count_word(neg_s["clean_text"],10)[1],y= count_word(neg_s["clean_text"],10)[0],text=count_word(neg_s["clean_text"],10)[1]
+                          ,orientation='h',color=count_word(neg_s["clean_text"],10)[0]
+                      ,color_discrete_sequence=plat,labels={"x": "","y": ""},
+                    width=400,title="Most Negative Words").update_layout(layout).update_traces(showlegend=False))
+
+
+
+
+
+
 ###########Display Tweetes###############3
 
     # A list of the tweet urls, sorted by retweet count.
@@ -299,7 +354,30 @@ def visi (df,df_age,df_hash):
 ##  st.write(x.update_layout(width=1000,coloraxis_showscale=False
 ##                           ,height=300
 ##                           ,margin=dict(t=.1, b=0.1, l=0.1, r=0.1)).update_traces(showscale=False))
+################################################################################################################3
 
+################################### Ngram of Data ###########################
+##from nltk.util import ngrams
+##symbols = ['.', '£', '-', '!', '(', ')', ':', ',',"'",']','[']
+##
+##l=""
+##for i in range(len(neg_s["clean_text"])):
+##  l= l + str(neg_s["clean_text"].iloc[i])
+##for i in symbols:
+##  l=l.replace(i,'')
+##
+##split_it = l.split()
+##
+##ll=list(ngrams(split_it,4))
+##
+##
+##freq_dist_pos = FreqDist(ll).most_common(10)
+##item=[]
+##values=[]
+##
+##for i,j in freq_dist_pos:
+##  item.append(i)
+##  values.append(j)
 #########################################
 if com_select == "KIA":
   df=pd.read_csv("Data/Merged_KIA.csv")
