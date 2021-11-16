@@ -24,7 +24,7 @@ import os
 #nltk.download('stopwords')
 
 ############### Load Dataset ########################
-@st.cache
+@st.cache(hash_funcs={"_thread.RLock": lambda _: None})
 def load_data():
     # path 
     path = './Data' 
