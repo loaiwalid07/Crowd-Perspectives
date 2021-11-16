@@ -1,4 +1,5 @@
 import streamlit as st
+st.set_page_config(page_title='Crowd Perspectives',  layout='wide', page_icon=':chart_with_upwards_trend:',menu_items=None)
 import pandas as pd
 import numpy as np
 import plotly.offline as po
@@ -39,7 +40,7 @@ def show_tweet(link):
     html = response.json()["html"]
     return html
 ########################
-st.set_page_config(page_title='Crowd Perspectives',  layout='wide', page_icon=':chart_with_upwards_trend:')
+
 #st.image('header.jpg', use_column_width=True)
 
 t1,t2,t3 = st.columns([0.15,1,1])
