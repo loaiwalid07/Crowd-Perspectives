@@ -99,7 +99,7 @@ data = dict(type = 'choropleth',
 
 
 def visi (df,df_age,df_hash):
-  @st.cache
+
   layout = pg.Layout(
     paper_bgcolor='rgba(0,0,0,0)',
     plot_bgcolor='rgba(0,0,0,0)',
