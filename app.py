@@ -24,7 +24,7 @@ import os
 #nltk.download('stopwords')
 
 ############### Load Dataset ########################
-#@st.experimental_memo()
+@st.cache
 
 # path 
 path = './Data' 
@@ -96,7 +96,7 @@ data = dict(type = 'choropleth',
 ####################################################
 
 
-
+@st.cache
 def visi (df,df_age,df_hash):
 
   layout = pg.Layout(
