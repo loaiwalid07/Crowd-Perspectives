@@ -24,7 +24,7 @@ import os
 #nltk.download('stopwords')
 
 ############### Load Dataset ########################
-#@st.experimental_memo
+@st.experimental_memo
 
 # path 
 path = './Data' 
@@ -95,7 +95,7 @@ data = dict(type = 'choropleth',
 
 ####################################################
 
-@st.singleton
+@st.experimental_singleton
 
 def visi (df,df_age,df_hash):
 
