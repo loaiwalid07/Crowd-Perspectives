@@ -17,11 +17,14 @@ import requests
 from IPython.display import display
 from IPython.display import HTML
 import streamlit.components.v1 as components
-
+import gdown
 #nltk.download('punkt')
 #nltk.download('stopwords')
 
-
+#######################################
+url = jOiEZyYU7u_E8cC5TlJbq4om9XnmFs
+gdown.download(url, "./", quiet=False)
+#https://drive.google.com/file/d/1--jOiEZyYU7u_E8cC5TlJbq4om9XnmFs/view?usp=sharing
 ##############################
 def show_tweet(link):
     '''Display the contents of a tweet. '''
@@ -386,7 +389,7 @@ if com_select == "KIA":
   word_cloud="wordcloud/kia.jpeg"
   visi(df,df_age,df_hash)
 elif com_select == "B.M.W":
-  df=pd.read_csv("Data/Merged_BMW.csv")
+  df=pd.read_csv("Merged_BMW.csv")
   df_age=pd.read_csv("Data/BMW_age.csv")
   df_hash=pd.read_csv("Data/BMW_popular_hashtags.csv")
   word_cloud="wordcloud/BWM.jpeg"
