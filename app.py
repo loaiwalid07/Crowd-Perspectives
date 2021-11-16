@@ -31,7 +31,7 @@ try:
     os.mkdir(path) 
 except OSError as error: 
     print(error)
-print("Directory '% s' created" % directory)
+print("Directory '% s' created" % path)
 ##Download the dataset
 url = 'https://drive.google.com/drive/u/1/folders/1kWx7oLFGCq1IgRL5-Eqmhn5SslB2meEU'
 gdown.download_folder(url,quiet=True)
