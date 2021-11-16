@@ -95,7 +95,7 @@ data = dict(type = 'choropleth',
 
 ####################################################
 
-@st.experimental_singleton
+
 
 def visi (df,df_age,df_hash):
 
