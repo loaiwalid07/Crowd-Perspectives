@@ -24,7 +24,7 @@ import os
 #nltk.download('stopwords')
 
 ############### Load Dataset ########################
-@st.cache
+
 
 # path 
 path = './Data' 
@@ -34,6 +34,7 @@ try:
 except OSError as error: 
     print(error)
 print("Directory '% s' created" % path)
+@st.cache
 ##Download the dataset
 url = 'https://drive.google.com/drive/u/1/folders/1kWx7oLFGCq1IgRL5-Eqmhn5SslB2meEU'
 gdown.download_folder(url,quiet=True)
@@ -96,9 +97,9 @@ data = dict(type = 'choropleth',
 ####################################################
 
 
-@st.cache
-def visi (df,df_age,df_hash):
 
+def visi (df,df_age,df_hash):
+  @st.cache
   layout = pg.Layout(
     paper_bgcolor='rgba(0,0,0,0)',
     plot_bgcolor='rgba(0,0,0,0)',
