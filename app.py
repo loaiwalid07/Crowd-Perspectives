@@ -24,7 +24,7 @@ import os
 #nltk.download('stopwords')
 
 ############### Load Dataset ########################
-@st.experimental_memo()
+#@st.experimental_memo()
 
 # path 
 path = './Data' 
