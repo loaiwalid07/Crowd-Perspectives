@@ -19,12 +19,13 @@ from IPython.display import display
 from IPython.display import HTML
 import streamlit.components.v1 as components
 import gdown
+import os
 #nltk.download('punkt')
 #nltk.download('stopwords')
 
 ############### Load Dataset ########################
 @st.experimental_memo
-import os  
+
 # path 
 path = './Data' 
 # Create the directory 
@@ -93,6 +94,7 @@ data = dict(type = 'choropleth',
         text = ['alabama', 'alaska', 'arizona', 'pugger', 'california'])
 
 ####################################################
+
 @st.singleton
 
 def visi (df,df_age,df_hash):
