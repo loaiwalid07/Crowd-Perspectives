@@ -22,7 +22,8 @@ import gdown
 #nltk.download('punkt')
 #nltk.download('stopwords')
 
-#######################################
+############### Load Dataset ########################
+@st.experimental_memo
 import os  
 # path 
 path = './Data' 
