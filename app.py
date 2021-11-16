@@ -22,8 +22,14 @@ import gdown
 #nltk.download('stopwords')
 
 #######################################
-url = 'https://drive.google.com/file/d/1--jOiEZyYU7u_E8cC5TlJbq4om9XnmFs'
-gdown.download(url, "Merged_BMW.csv", quiet=False)
+url_m = 'https://drive.google.com/file/d/1--jOiEZyYU7u_E8cC5TlJbq4om9XnmFs'
+url_age="https://drive.google.com/file/d/1JKUw2ozF_-KOF9gORIluJNbITUuT2H2b"
+url_hash = "https://drive.google.com/file/d/1J3PlWM1OiEy-HErI8Z6ciKGjMPEwQ86y"
+url_tewt = "https://drive.google.com/file/d/1J4UZM8nRTYRk8NeGemx7xNS0VGWAcA3K"
+
+gdown.download(url_m, "Merged_BMW.csv", quiet=False)
+gdown.download(url_age, "BMW_age.csv", quiet=False)
+gdown.download(url_hash, "BMW_popular_hashtags.csv", quiet=False)
 #https://drive.google.com/file/d/1--jOiEZyYU7u_E8cC5TlJbq4om9XnmFs/view?usp=sharing
 ##############################
 def show_tweet(link):
@@ -390,8 +396,8 @@ if com_select == "KIA":
   visi(df,df_age,df_hash)
 elif com_select == "B.M.W":
   df=pd.read_csv("Merged_BMW.csv")
-  df_age=pd.read_csv("Data/BMW_age.csv")
-  df_hash=pd.read_csv("Data/BMW_popular_hashtags.csv")
+  df_age=pd.read_csv("BMW_age.csv")
+  df_hash=pd.read_csv("BMW_popular_hashtags.csv")
   word_cloud="wordcloud/BWM.jpeg"
   visi(df,df_age,df_hash)
 elif com_select == "Mercedes Bens":
