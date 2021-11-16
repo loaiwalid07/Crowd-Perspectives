@@ -93,6 +93,7 @@ data = dict(type = 'choropleth',
         text = ['alabama', 'alaska', 'arizona', 'pugger', 'california'])
 
 ####################################################
+@st.singleton
 
 def visi (df,df_age,df_hash):
 
