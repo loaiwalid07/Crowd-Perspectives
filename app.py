@@ -23,7 +23,7 @@ import gdown
 
 #######################################
 url = 'https://drive.google.com/file/d/1--jOiEZyYU7u_E8cC5TlJbq4om9XnmFs'
-gdown.download(url, "./", quiet=False)
+gdown.download(url, "Merged_BMW.csv", quiet=False)
 #https://drive.google.com/file/d/1--jOiEZyYU7u_E8cC5TlJbq4om9XnmFs/view?usp=sharing
 ##############################
 def show_tweet(link):
