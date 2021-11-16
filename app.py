@@ -23,15 +23,18 @@ import gdown
 #nltk.download('stopwords')
 
 #######################################
-url_m = 'https://drive.google.com/uc?id=1--jOiEZyYU7u_E8cC5TlJbq4om9XnmFs'
-url_age="https://drive.google.com/uc?id=1JKUw2ozF_-KOF9gORIluJNbITUuT2H2b"
-url_hash = "https://drive.google.com/uc?id=1J3PlWM1OiEy-HErI8Z6ciKGjMPEwQ86y"
-url_tewt = "https://drive.google.com/uc?id=1J4UZM8nRTYRk8NeGemx7xNS0VGWAcA3K"
-
-gdown.download(url_m, "Merged_BMW.csv", quiet=False)
-gdown.download(url_age, "BMW_age.csv", quiet=False)
-gdown.download(url_hash, "BMW_popular_hashtags.csv", quiet=False)
-
+import os  
+# path 
+path = './Data' 
+# Create the directory 
+try: 
+    os.mkdir(path) 
+except OSError as error: 
+    print(error)
+print("Directory '% s' created" % directory)
+##Download the dataset
+url = 'https://drive.google.com/drive/u/1/folders/1kWx7oLFGCq1IgRL5-Eqmhn5SslB2meEU'
+gdown.download_folder(url,quiet=True)
 ##############################
 def show_tweet(link):
     '''Display the contents of a tweet. '''
@@ -396,9 +399,9 @@ if com_select == "KIA":
   word_cloud="wordcloud/kia.jpeg"
   visi(df,df_age,df_hash)
 elif com_select == "B.M.W":
-  df=pd.read_csv("Merged_BMW.csv")
-  df_age=pd.read_csv("BMW_age.csv")
-  df_hash=pd.read_csv("BMW_popular_hashtags.csv")
+  df=pd.read_csv("Data/Merged_BMW.csv")
+  df_age=pd.read_csv("Data/BMW_age.csv")
+  df_hash=pd.read_csv("Data/BMW_popular_hashtags.csv")
   word_cloud="wordcloud/BWM.jpeg"
   visi(df,df_age,df_hash)
 elif com_select == "Mercedes Bens":
