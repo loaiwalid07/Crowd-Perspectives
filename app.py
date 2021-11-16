@@ -28,10 +28,23 @@ url_age="https://drive.google.com/file/d/1JKUw2ozF_-KOF9gORIluJNbITUuT2H2b"
 url_hash = "https://drive.google.com/file/d/1J3PlWM1OiEy-HErI8Z6ciKGjMPEwQ86y"
 url_tewt = "https://drive.google.com/file/d/1J4UZM8nRTYRk8NeGemx7xNS0VGWAcA3K"
 
-gdown.download(url_m, "Merged_BMW.csv", quiet=False)
-gdown.download(url_age, "BMW_age.csv", quiet=False)
-gdown.download(url_hash, "BMW_popular_hashtags.csv", quiet=False)
+#gdown.download(url_m, "Merged_BMW.csv", quiet=False)
+#gdown.download(url_age, "BMW_age.csv", quiet=False)
+#gdown.download(url_hash, "BMW_popular_hashtags.csv", quiet=False)
 #https://drive.google.com/file/d/1--jOiEZyYU7u_E8cC5TlJbq4om9XnmFs/view?usp=sharing
+import requests
+from io import StringIO
+
+
+
+file_id = url_m.split('/')[-2]
+dwn_url='https://drive.google.com/uc?export=download&id=' + file_id
+url2 = requests.get(dwn_url).text
+csv_raw = StringIO(url2)
+df = pd.read_csv(csv_raw)
+print(df.head())
+
+
 ##############################
 def show_tweet(link):
     '''Display the contents of a tweet. '''
@@ -396,7 +409,7 @@ if com_select == "KIA":
   word_cloud="wordcloud/kia.jpeg"
   visi(df,df_age,df_hash)
 elif com_select == "B.M.W":
-  df=pd.read_csv("Merged_BMW.csv")
+  #df=pd.read_csv("Merged_BMW.csv")
   df_age=pd.read_csv("BMW_age.csv")
   df_hash=pd.read_csv("BMW_popular_hashtags.csv")
   word_cloud="wordcloud/BWM.jpeg"
