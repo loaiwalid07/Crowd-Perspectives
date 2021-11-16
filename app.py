@@ -24,21 +24,24 @@ import os
 #nltk.download('stopwords')
 
 ############### Load Dataset ########################
-
-
-# path 
-path = './Data' 
-# Create the directory 
-try: 
-    os.mkdir(path) 
-except OSError as error: 
-    print(error)
-print("Directory '% s' created" % path)
-#@st.cache
-##Download the dataset
-url = 'https://drive.google.com/drive/u/1/folders/1kWx7oLFGCq1IgRL5-Eqmhn5SslB2meEU'
-gdown.download_folder(url,quiet=True)
+@st.cache
+def load_data():
+    # path 
+    path = './Data' 
+    # Create the directory 
+    try: 
+        os.mkdir(path) 
+    except OSError as error: 
+        print(error)
+    print("Directory '% s' created" % path)
+    #@st.cache
+    ##Download the dataset
+    url = 'https://drive.google.com/drive/u/1/folders/1kWx7oLFGCq1IgRL5-Eqmhn5SslB2meEU'
+    gdown.download_folder(url,quiet=True)
+    return "Done Load"
 ##############################
+load_data()
+###########################
 def show_tweet(link):
     '''Display the contents of a tweet. '''
     url = 'https://publish.twitter.com/oembed?url=%s' % link
