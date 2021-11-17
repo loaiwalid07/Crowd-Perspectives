@@ -56,7 +56,7 @@ def search_tweets(quer,dfs):
   tokenized_corpus = [doc.split(" ") for doc in all_data["clean_text"]]
   bm25 = BM25Plus(tokenized_corpus)
   tokenized_query = quer.split(" ")
-  results=final_new_menu = list(dict.fromkeys(bm25.get_top_n(tokenized_query, all_data["clean_text"],n=5000)))
+  results=final_new_menu = list(dict.fromkeys(bm25.get_top_n(tokenized_query, all_data["clean_text"],n=100)))
   df_serch=pd.DataFrame()
   for i in range(len(results)):
     df_serch=df_serch.append(all_data.loc[all_data['clean_text'] == results[i]])
