@@ -450,7 +450,7 @@ elif com_select == "Search in All":
   df_age=pd.read_csv("Data/Peugeot_age.csv")
   df_hash=pd.read_csv("Data/peuog_popular_hashtags.csv")
   word_cloud="wordcloud/peugeot.jpeg"
-    
+  visi(df,df_age,df_hash)
 
 else:
   st.markdown("")
