@@ -172,8 +172,10 @@ def visi (df,df_age,df_hash):
     symbols = ['.', '£', '-', '!', '(', ')', ':', ',',"'",']','[']
 
     l=""
-    for i in range(len(df["clean_text"])):
-      l= l + str(df["clean_text"][i])
+    #for i in range(len(df["clean_text"])):
+    for i in df["clean_text"]:
+      #l= l + str(df["clean_text"][i])
+      l= l + i
     for i in symbols:
       l=l.replace(i,'')
 
