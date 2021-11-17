@@ -445,15 +445,17 @@ elif com_select == "Peugeot":
   word_cloud="wordcloud/peugeot.jpeg"
   visi(df,df_age,df_hash)
 elif com_select == "Search in All":
-  quer = st.text_input('Search :') 
+  if quer = st.text_input('Search :') == "":
+    st.markdown("")
+  else:
   
-  df = search_tweets(quer,[pd.read_csv("Data/Merged_KIA.csv"),pd.read_csv("Data/Merged_BMW.csv"),pd.read_csv("Data/Merged_Mercedes.csv")
+    df = search_tweets(quer,[pd.read_csv("Data/Merged_KIA.csv"),pd.read_csv("Data/Merged_BMW.csv"),pd.read_csv("Data/Merged_Mercedes.csv")
                              ,pd.read_csv("Data/Merged_Hyundai.csv"),pd.read_csv("Data/Merged_Peugeot.csv")])
-  #st.write(df.head())
-  df_age=pd.read_csv("Data/Peugeot_age.csv")
-  df_hash=pd.read_csv("Data/peuog_popular_hashtags.csv")
-  word_cloud="wordcloud/peugeot.jpeg"
-  visi(df,df_age,df_hash)
+    #st.write(df.head())
+    df_age=pd.read_csv("Data/Peugeot_age.csv")
+    df_hash=pd.read_csv("Data/peuog_popular_hashtags.csv")
+    word_cloud="wordcloud/peugeot.jpeg"
+    visi(df,df_age,df_hash)
 
 else:
   st.markdown("")
