@@ -447,6 +447,7 @@ elif com_select == "Search in All":
   
   df = search_tweets(quer,[pd.read_csv("Data/Merged_KIA.csv"),pd.read_csv("Data/Merged_BMW.csv"),pd.read_csv("Data/Merged_Mercedes.csv")
                              ,pd.read_csv("Data/Merged_Hyundai.csv"),pd.read_csv("Data/Merged_Peugeot.csv")])
+  print(df.head())
   df_age=pd.read_csv("Data/Peugeot_age.csv")
   df_hash=pd.read_csv("Data/peuog_popular_hashtags.csv")
   word_cloud="wordcloud/peugeot.jpeg"
