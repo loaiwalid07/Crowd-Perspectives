@@ -48,8 +48,18 @@ def show_tweet(link):
     response = requests.get(url)
     html = response.json()["html"]
     return html
-########################
-
+########## search_tweets ##############
+def search_tweets(quer,dfs):
+  all_data = pd.concat(dfs, ignore_index=True)
+  tokenized_corpus = [doc.split(" ") for doc in all_data["clean_text"]]
+  bm25 = BM25Plus(tokenized_corpus)
+  tokenized_query = quer.split(" ")
+  results=final_new_menu = list(dict.fromkeys(bm25.get_top_n(tokenized_query, all_data["clean_text"],n=5000)))
+  df_serch=pd.DataFrame()
+  for i in range(len(results)):
+    df_serch=df_serch.append(all_data.loc[all_data['clean_text'] == results[i]])
+  return df_serch 
+###############################
 #st.image('header.jpg', use_column_width=True)
 
 t1,t2,t3 = st.columns([0.15,1,1])
@@ -61,7 +71,7 @@ t2.title("**Crowd Perspectives **")
 
 with t3:
 
-  com_select = st.selectbox('', ["Choose a Company","KIA","B.M.W","Mercedes Bens","Hyundai","Peugeot"])
+  com_select = st.selectbox('', ["Choose a Company","KIA","B.M.W","Mercedes Bens","Hyundai","Peugeot","Search in All"])
 
 ##############  colors####################3
 plat=["#334553","#0cbce4","#5baee5","#0c819c","#703770"]
@@ -430,5 +440,15 @@ elif com_select == "Peugeot":
   df_hash=pd.read_csv("Data/peuog_popular_hashtags.csv")
   word_cloud="wordcloud/peugeot.jpeg"
   visi(df,df_age,df_hash)
+elif com_select == "Search in All":
+  quer = st.text_input('Search :') 
+  
+  df = search_tweets(quer,[pd.read_csv("Data/Merged_KIA.csv"),pd.read_csv("Data/Merged_BMW.csv"),pd.read_csv("Data/Merged_Mercedes.csv")
+                             ,pd.read_csv("Data/Merged_Hyundai.csv"),pd.read_csv("Data/Merged_Peugeot.csv")])
+  df_age=pd.read_csv("Data/Peugeot_age.csv")
+  df_hash=pd.read_csv("Data/peuog_popular_hashtags.csv")
+  word_cloud="wordcloud/peugeot.jpeg"
+    
+
 else:
   st.markdown("")
