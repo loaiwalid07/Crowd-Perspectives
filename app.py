@@ -64,11 +64,10 @@ def search_tweets(quer,dfs):
 ###############################
 #st.image('header.jpg', use_column_width=True)
 data_di={"Cars":["Choose a Company","KIA","B.M.W","Mercedes Bens","Hyundai","Peugeot"],"Companies":["Voda","Samsunge"],"Celebrities":["Aglina","Mask"]}
-k,v=[],[]
+k=[]
 for i,j in enumerate(data_di):
   k.append(j)
-  v.append(data_di[j])
-t1,t2,t3 = st.columns([0.15,1,1])
+t1,t2,t3,t4 = st.columns([0.15,1,1,1])
 
 
 t1.image('Picture.png', width = 100)
@@ -77,8 +76,9 @@ t2.title("**Crowd Perspectives **")
 
 with t3:
   top_select = st.selectbox('', k)
-  com_select = st.selectbox('', data_di[top_select])
-
+  
+with t4:
+  com_select = st.selectbox('', data_di[top_select])  
 ##############  colors####################3
 plat=["#334553","#0cbce4","#5baee5","#0c819c","#703770"]
 
