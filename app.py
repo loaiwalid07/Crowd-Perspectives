@@ -77,7 +77,7 @@ t2.title("**Crowd Perspectives **")
 
 with t3:
   top_select = st.selectbox('', k)
-  com_select = st.selectbox('', data_di[k])
+  com_select = st.selectbox('', data_di[top_select])
 
 ##############  colors####################3
 plat=["#334553","#0cbce4","#5baee5","#0c819c","#703770"]
