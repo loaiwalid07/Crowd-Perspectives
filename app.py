@@ -456,7 +456,8 @@ elif com_select == "Peugeot":
   word_cloud="wordcloud/peugeot.jpeg"
   visi(df,df_age,df_hash)
 elif com_select == "Search in All":
-  quer = st.text_input('Search :')
+  buff, col_tx, buff2 = st.beta_columns([1,3,1])
+  quer = col_tx.text_input('Search :')
   if quer  == "":
     st.markdown("")
   else:
