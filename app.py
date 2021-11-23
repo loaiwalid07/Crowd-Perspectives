@@ -63,7 +63,11 @@ def search_tweets(quer,dfs):
   return df_serch 
 ###############################
 #st.image('header.jpg', use_column_width=True)
-
+data_di={"Cars":["Choose a Company","KIA","B.M.W","Mercedes Bens","Hyundai","Peugeot"],"Companies":["Voda","Samsunge"],"Celebrities":["Aglina","Mask"]}
+k,v=[],[]
+for i,j in enumerate(data_di):
+  k.append(j)
+  v.append(data_di[j])
 t1,t2,t3 = st.columns([0.15,1,1])
 
 
@@ -72,8 +76,8 @@ t1.image('Picture.png', width = 100)
 t2.title("**Crowd Perspectives **")
 
 with t3:
-
-  com_select = st.selectbox('', ["Choose a Company","KIA","B.M.W","Mercedes Bens","Hyundai","Peugeot","Search in All"])
+  top_select = st.selectbox('', k)
+  com_select = st.selectbox('', data_di[k])
 
 ##############  colors####################3
 plat=["#334553","#0cbce4","#5baee5","#0c819c","#703770"]
