@@ -67,7 +67,7 @@ data_di={"Cars":["Choose a Company","KIA","B.M.W","Mercedes Bens","Hyundai","Peu
 k=[]
 for i,j in enumerate(data_di):
   k.append(j)
-t1,t2,t3,t4 = st.columns([0.15,1,1,1])
+t1,t2,t3,t4 = st.columns([0.25,1,1,1])
 
 
 t1.image('Picture.png', width = 100)
