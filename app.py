@@ -470,4 +470,5 @@ elif com_select == "Search in All":
     visi(df,df_age,df_hash)
 
 else:
+  st.write(pd.read_csv("Data/Adele.csv").head())
   st.markdown("")
