@@ -69,7 +69,7 @@ data_di={"Cars":["Choose One","KIA","B.M.W","Mercedes Bens","Hyundai","Peugeot",
          "Sport":["Choose One","Messi","Cristiano Ronaldo","Football","Fitness","Summing","Kickboxing"],
          "Recipes":["Choose One","Pizza","Koshare","Biryani","Sushi","Burger","Shawarma"],
          "Carton":["Choose One","Case Closed","Tom and Jerry","Superman","Batman","Cinderella","Ninja Turtles"],
-         "Places":["Choose One","Pyramids","Khalifa Tower","Evil Tower","Leaning Tower","Statue of Liberty","Taj Mahal"
+         "Places":["Choose One","Pyramids","Khalifa Tower","Evil Tower","Leaning Tower","Statue of Liberty","Taj Mahal"]
         }
 k=[]
 for i,j in enumerate(data_di):
