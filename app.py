@@ -111,6 +111,19 @@ side_bg_ext = "png"
 ##    unsafe_allow_html=True
 ##)
 ##
+
+st.markdown(f"""
+<div class="waveWrapper waveAnimation">
+  <div class="waveWrapperInner bgTop">
+    <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+  </div>
+  <div class="waveWrapperInner bgMiddle">
+    <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+  </div>
+  <div class="waveWrapperInner bgBottom">
+    <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+  </div>
+</div>""",unsafe_allow_html=True)
 #################################################
 data = dict(type = 'choropleth',
         locations = ["Egypt","Brazil","UAE","USA","Germany"],
