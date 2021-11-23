@@ -123,7 +123,8 @@ st.markdown(f"""
   <div class="waveWrapperInner bgBottom">
     <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
   </div>
-</div>""",unsafe_allow_html=True)
+</div>""")
+            #,unsafe_allow_html=True)
 #################################################
 data = dict(type = 'choropleth',
         locations = ["Egypt","Brazil","UAE","USA","Germany"],
