@@ -63,7 +63,14 @@ def search_tweets(quer,dfs):
   return df_serch 
 ###############################
 #st.image('header.jpg', use_column_width=True)
-data_di={"Cars":["Choose a Company","KIA","B.M.W","Mercedes Bens","Hyundai","Peugeot"],"Companies":["Voda","Samsunge"],"Celebrities":["Aglina","Mask"]}
+data_di={"Cars":["Choose One","KIA","B.M.W","Mercedes Bens","Hyundai","Peugeot","Search in All"],
+         "Companies":["Choose One","Microsoft","Vodafone","Amazon","Huawei","Dell","Samsung"],
+         "Celebrities":["Choose One","Paris Hilton","Elon Musk","Mark Zuckerberg","Angelina Joly","Brad bet","Adele"],
+         "Sport":["Choose One","Messi","Cristiano Ronaldo","Football","Fitness","Summing","Kickboxing"],
+         "Recipes":["Choose One","Pizza","Koshare","Biryani","Sushi","Burger","Shawarma"],
+         "Carton":["Choose One","Case Closed","Tom and Jerry","Superman","Batman","Cinderella","Ninja Turtles"],
+         "Places":["Choose One","Pyramids","Khalifa Tower","Evil Tower","Leaning Tower","Statue of Liberty","Taj Mahal"
+        }
 k=[]
 for i,j in enumerate(data_di):
   k.append(j)
