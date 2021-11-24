@@ -102,7 +102,7 @@ st.markdown(
     .stApp {{
        background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
        
-       background-repeat: no-repeat;
+       
       
 
     }}
