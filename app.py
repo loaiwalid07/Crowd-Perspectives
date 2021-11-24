@@ -96,50 +96,18 @@ main_bg_ext = "jpg"
 side_bg = "Picture.png"
 side_bg_ext = "png"
 
-##st.markdown(
- ##   f"""
- ##   <style>
- ##   .reportview-container {{
- ##       background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
+st.markdown(
+    f"""
+    <style>
+    .reportview-container {{
+       background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
       
-##    }}
-##   .sidebar .sidebar-content {{
-##        background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()})
-##    }}
-##    </style>
-##    """,
-##    unsafe_allow_html=True
-##)
-##
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    }}
+   .sidebar .sidebar-content {{
+        background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()})
+    }}
+    </style>""",unsafe_allow_html=True)
 
-def remote_css(url):
-    st.markdown(f'<link href="{url}" rel="stylesheet">', unsafe_allow_html=True)    
-
-def icon(icon_name):
-    st.markdown(f'<i class="material-icons">{icon_name}</i>', unsafe_allow_html=True)
-
-local_css("style.css")
-remote_css('https://fonts.googleapis.com/icon?family=Material+Icons')
-
-icon("search")
-selected = st.text_input("", "Search...")
-button_clicked = st.button("OK")
-
-st.markdown(f"""
-<div class="waveWrapper waveAnimation">
-  <div class="waveWrapperInner bgTop">
-    <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
-  </div>
-  <div class="waveWrapperInner bgMiddle">
-    <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
-  </div>
-  <div class="waveWrapperInner bgBottom">
-    <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
-  </div>
-</div>""",unsafe_allow_html=True)
 #################################################
 data = dict(type = 'choropleth',
         locations = ["Egypt","Brazil","UAE","USA","Germany"],
