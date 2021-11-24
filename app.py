@@ -90,8 +90,8 @@ with t4:
 plat=["#334553","#0cbce4","#5baee5","#0c819c","#703770"]
 
 ############# Background Image ################
-main_bg = "negative-space-bright-milky-way-galaxy-1062x708.jpg"
-main_bg_ext = "jpg"
+main_bg = "Wave-Background-Graphics-1-1-580x387.png"
+main_bg_ext = "png"
 
 side_bg = "Picture.png"
 side_bg_ext = "png"
