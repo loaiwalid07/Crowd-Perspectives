@@ -90,35 +90,28 @@ with t4:
 plat=["#334553","#0cbce4","#5baee5","#0c819c","#703770"]
 
 ############# Background Image ################
-main_bg = "Wave-Background-Graphics-1-1-580x387.png"
-main_bg_ext = "png"
+def back():
+    main_bg = "Wave-Background-Graphics-1-1-580x387.png"
+    main_bg_ext = "png"
 
-side_bg = "Picture.png"
-side_bg_ext = "png"
+    side_bg = "Picture.png"
+    side_bg_ext = "png"
 
-st.markdown(
-    f"""
-    <style>
-    .reportview-container {{
-       background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
-       background-size: cover;
-       
-    }}
-   .sidebar .sidebar-content {{
-        background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()})
-    }}
-    </style>""",unsafe_allow_html=True)
+    st.markdown(
+        f"""
+        <style>
+        .reportview-container {{
+           background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
+           background-size: cover;
+
+        }}
+       .sidebar .sidebar-content {{
+            background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()})
+        }}
+        </style>""",unsafe_allow_html=True)
 #################################################33
-page_bg_img = '''
-<style>
-body {
-background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
-
-}
-</style>
-'''
-
-st.markdown(page_bg_img, unsafe_allow_html=True)
+import helper as help
+help.back()
 #################################################
 data = dict(type = 'choropleth',
         locations = ["Egypt","Brazil","UAE","USA","Germany"],
