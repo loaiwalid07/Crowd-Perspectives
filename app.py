@@ -285,8 +285,32 @@ def visi (df,df_age,df_hash,df_em):
 ##############Word Cloud##################33
 
   with chart7:
+        from wordcloud import WordCloud, ImageColorGenerator
+        from PIL import Image
+        import urllib
+        import requests
+        # combining the image with the dataset
+        long_string = ','.join(list(df['clean_text'].values))
+        Mask = np.array(Image.open(requests.get('http://clipart-library.com/image_gallery2/Twitter-PNG-Image.png', stream = True).raw))
+
+        # We use the ImageColorGenerator library from Wordcloud 
+        # Here we take the color of the image and impose it over our wordcloud
+        image_colors = ImageColorGenerator(Mask)
+
+        # Now we use the WordCloud function from the wordcloud library 
+        wc = WordCloud(background_color="white",contour_width=3, contour_color='#6DB1E0', max_words=80,collocations=False, mask = Mask).generate(long_string)
+
+        # Size of the image generated 
+        plt.figure(figsize = (10, 20))
+
+        # Here we recolor the words from the dataset to the image's color
+        # recolor just recolors the default colors to the image's blue color
+        # interpolation is used to smooth the image generated 
+        #plt.imshow(wc.recolor(color_func = image_colors), interpolation = "hamming")
+        #plt.axis('off')
+        #plt.show()
     with st.expander("Wrod Cloud", True):
-      st.image(word_cloud)
+      st.write(plt.imshow(wc.recolor(color_func = image_colors), interpolation = "hamming"))
 
 
 
