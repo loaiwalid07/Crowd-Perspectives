@@ -272,17 +272,21 @@ def visi (df,df_age,df_hash,df_em):
 #######################################################
   
   with em1:
-      try:
-         st.image('1.png', width = 70)
-         st.markdown(f"<h1 style='text-align: center;color: green;'>{round((values_s[item_s.index('positive')]/sum(values_s))*100)}%</h1>", unsafe_allow_html=True)
-      try:
-         st.image('2.png', width = 70)
-         st.markdown(f"<h1 style='text-align: center;'>{round((values_s[item_s.index('neutral')]/sum(values_s))*100)}%</h1>", unsafe_allow_html=True)
-      try:
-         st.image('3.png', width = 70)
-         st.markdown(f"<h1 style='text-align: center; color: red;'>{round((values_s[item_s.index('negative')]/sum(values_s))*100)}%</h1>", unsafe_allow_html=True)
-      except:
-         st.markdown("***")
+        try:
+          st.image('1.png', width = 70)
+          st.markdown(f"<h1 style='text-align: center;color: green;'>{round((values_s[item_s.index('positive')]/sum(values_s))*100)}%</h1>", unsafe_allow_html=True)
+        except:
+          pass
+        try:
+          st.image('2.png', width = 70)
+          st.markdown(f"<h1 style='text-align: center;'>{round((values_s[item_s.index('neutral')]/sum(values_s))*100)}%</h1>", unsafe_allow_html=True)
+        except:
+          pass
+        try:
+          st.image('3.png', width = 70)
+          st.markdown(f"<h1 style='text-align: center; color: red;'>{round((values_s[item_s.index('negative')]/sum(values_s))*100)}%</h1>", unsafe_allow_html=True)
+        except:
+          st.markdown("***")
 ##############Word Cloud##################33
 
   with chart7:
