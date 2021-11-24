@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config(page_title='Crowd Perspectives',  layout='wide', page_icon=':chart_with_upwards_trend:',menu_items=None)
+st.set_page_config(page_title='Crowd Perspectives',  layout='wide', page_icon=':chart_with_upwards_trend:')
 import pandas as pd
 import numpy as np
 import plotly.offline as po
