@@ -395,7 +395,7 @@ def visi (df,df_age,df_hash,df_em):
 
       
       with st.expander("Emotion Analysis", True):
-                st.write(go.Figure(data=[go.Pie(labels=item_em, values=values_em, textinfo='label+percent').update_traces(marker=dict(colors=plat)).update_layout(layout).update_layout(width=400,height=300,margin=dict(t=.1, b=0.1, l=0.1, r=0.1)))
+                st.write(go.Figure(data=[go.Pie(labels=item_em, values=values_em, textinfo='label+percent')]).update_traces(marker=dict(colors=plat)).update_layout(layout).update_layout(width=400,height=300,margin=dict(t=.1, b=0.1, l=0.1, r=0.1)))
        
 
 
