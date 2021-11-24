@@ -138,7 +138,7 @@ data = dict(type = 'choropleth',
 
 
 
-def visi (df,df_age,df_hash):
+def visi (df,df_age,df_hash,df_em):
 
   layout = pg.Layout(
     paper_bgcolor='rgba(0,0,0,0)',
@@ -383,8 +383,20 @@ def visi (df,df_age,df_hash):
                       ,color_discrete_sequence=plat,labels={"x": "","y": ""},
                     width=400,title="Most Negative Words").update_layout(layout).update_traces(showlegend=False))
 
+  with chart10:
+      Counter_em = FreqDist(df_em["Emotion"])
+      most_em = Counter_em.most_common(6)
+      item_em = []
+      values_em = []
+      for i,j in most_em:
+            item_em.append(i)
+            values_em.append(j)
+      
 
-
+      
+      with st.expander("Emotion Analysis", True):
+                st.write(go.Figure(data=[go.Pie(labels=item_em, values=values_em, textinfo='label+percent').update_traces(marker=dict(colors=plat)).update_layout(layout).update_layout(width=400,height=300,margin=dict(t=.1, b=0.1, l=0.1, r=0.1)))
+       
 
 
 
@@ -444,31 +456,36 @@ if com_select == "KIA":
   df_age=pd.read_csv("Data/KIA_age.csv")
   df_hash=pd.read_csv("Data/kia_popular_hashtags.csv")
   word_cloud="wordcloud/kia.jpeg"
-  visi(df,df_age,df_hash)
+  df_em = pd.read_csv("Data/DINA.csv")
+  visi(df,df_age,df_hash,df_em)
 elif com_select == "B.M.W":
   df=pd.read_csv("Data/Merged_BMW.csv")
   df_age=pd.read_csv("Data/BMW_age.csv")
   df_hash=pd.read_csv("Data/BMW_popular_hashtags.csv")
   word_cloud="wordcloud/BWM.jpeg"
-  visi(df,df_age,df_hash)
+  df_em = pd.read_csv("Data/DINA.csv")                                         
+  visi(df,df_age,df_hash,df_em)
 elif com_select == "Mercedes Bens":
   df=pd.read_csv("Data/Merged_Mercedes.csv")
   df_age=pd.read_csv("Data/Mersedis_age.csv")
   df_hash=pd.read_csv("Data/mercedes_popular_hashtags.csv")
   word_cloud="wordcloud/Mercede.jpeg"
-  visi(df,df_age,df_hash)
+  df_em = pd.read_csv("Data/DINA.csv")                                         
+  visi(df,df_age,df_hash,df_em)
 elif com_select == "Hyundai":
   df=pd.read_csv("Data/Merged_Hyundai.csv")
   df_age=pd.read_csv("Data/Hyundai_age.csv")
   df_hash=pd.read_csv("Data/hyundai_popular_hashtags.csv")
   word_cloud="wordcloud/hyaduia.jpeg"
-  visi(df,df_age,df_hash)
+  df_em = pd.read_csv("Data/DINA.csv")                                         
+  visi(df,df_age,df_hash,df_em)
 elif com_select == "Peugeot":
   df=pd.read_csv("Data/Merged_Peugeot.csv")
   df_age=pd.read_csv("Data/Peugeot_age.csv")
   df_hash=pd.read_csv("Data/peuog_popular_hashtags.csv")
   word_cloud="wordcloud/peugeot.jpeg"
-  visi(df,df_age,df_hash)
+  df_em = pd.read_csv("Data/DINA.csv")                                         
+  visi(df,df_age,df_hash,df_em)
 elif com_select == "Search in All":
   buff, col_tx, buff2 = st.columns([1,3,1])
   quer = col_tx.text_input('Search :')
@@ -482,7 +499,8 @@ elif com_select == "Search in All":
     df_age=pd.read_csv("Data/Peugeot_age.csv")
     df_hash=pd.read_csv("Data/peuog_popular_hashtags.csv")
     word_cloud="wordcloud/peugeot.jpeg"
-    visi(df,df_age,df_hash)
+    df_em = pd.read_csv("Data/DINA.csv")                                         
+    visi(df,df_age,df_hash,df_em)
 
 else:
  
