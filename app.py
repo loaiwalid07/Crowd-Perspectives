@@ -74,7 +74,7 @@ data_di={"Cars":["Choose One","KIA","B.M.W","Mercedes Bens","Hyundai","Peugeot",
 k=[]
 for i,j in enumerate(data_di):
   k.append(j)
-t1,t2,t3,t4 = st.columns([0.25,1,1,1])
+t1,t2,t3,t4 = st.beta_columns([0.25,1,1,1])
 
 
 t1.image('Picture.png', width = 100)
@@ -174,7 +174,7 @@ def visi (df,df_age,df_hash,df_em):
 ##      final_ha.append(hassh[i][j])
 
 ################################ First Column################################################
-  em1,chart4, chart5,chart6,chart7 = st.columns([0.25,1,1,1,1])
+  em1,chart4, chart5,chart6,chart7 = st.beta_columns([0.25,1,1,1,1])
 
 ################# Most words ####################
     
@@ -309,7 +309,7 @@ def visi (df,df_age,df_hash,df_em):
 
 
 #################################### Second Column ########################################
-  retweet,chart1, chart2,chart3 = st.columns([0.30,1,1,1])
+  retweet,chart1, chart2,chart3 = st.beta_columns([0.30,1,1,1])
 
   with retweet:
     st.markdown("**Highest  No. of Retweet**")
@@ -354,7 +354,7 @@ def visi (df,df_age,df_hash,df_em):
 
 
 #################################### Third Column ########################################
-  side,chart8, chart9,chart10 = st.columns([0.30,1,1,1])
+  side,chart8, chart9,chart10 = st.beta_columns([0.30,1,1,1])
   def count_word(dataa,n):
       symbols = ['.', '£', '-', '!', '(', ')', ':', ',',"'",']','[']
 
