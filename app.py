@@ -306,11 +306,11 @@ def visi (df,df_age,df_hash,df_em):
     # Here we recolor the words from the dataset to the image's color
     # recolor just recolors the default colors to the image's blue color
     # interpolation is used to smooth the image generated 
-    #plt.imshow(wc.recolor(color_func = image_colors), interpolation = "hamming")
-    #plt.axis('off')
-    #plt.show()
+    plt.imshow(wc.recolor(color_func = image_colors), interpolation = "hamming")
+    plt.axis('off')
+    
     with st.expander("Wrod Cloud", True):
-      st.write(plt.imshow(wc.recolor(color_func = image_colors), interpolation = "hamming"))
+      st.write(plt.show())
 
 
 
