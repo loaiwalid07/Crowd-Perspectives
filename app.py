@@ -108,7 +108,17 @@ st.markdown(
         background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()})
     }}
     </style>""",unsafe_allow_html=True)
+#################################################33
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://images.unsplash.com/photo-1542281286-9e0a16bb7366");
+background-size: cover;
+}
+</style>
+'''
 
+st.markdown(page_bg_img, unsafe_allow_html=True)
 #################################################
 data = dict(type = 'choropleth',
         locations = ["Egypt","Brazil","UAE","USA","Germany"],
