@@ -95,11 +95,11 @@ main_bg_ext = "png"
 
 side_bg = "Picture.png"
 side_bg_ext = "png"
-
+#.reportview-container
 st.markdown(
     f"""
     <style>
-    .reportview-container {{
+    .stApp {{
        background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
        
 
