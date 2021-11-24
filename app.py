@@ -310,7 +310,7 @@ def visi (df,df_age,df_hash,df_em):
     plt.axis('off')
     
     with st.expander("Wrod Cloud", True):
-      st.write(plt.show())
+      st.pyplot()
 
 
 
