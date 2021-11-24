@@ -301,7 +301,7 @@ def visi (df,df_age,df_hash,df_em):
     wc = WordCloud(background_color="white",contour_width=3, contour_color='#6DB1E0', max_words=80,collocations=False, mask = Mask).generate(long_string)
 
     # Size of the image generated 
-    plt.figure(figsize = (10, 20))
+    fig = plt.figure(figsize = (10, 20))
 
     # Here we recolor the words from the dataset to the image's color
     # recolor just recolors the default colors to the image's blue color
@@ -310,7 +310,7 @@ def visi (df,df_age,df_hash,df_em):
     plt.axis('off')
     
     with st.expander("Wrod Cloud", True):
-      st.pyplot()
+      st.pyplot(fig)
 
 
 
