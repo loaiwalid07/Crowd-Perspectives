@@ -473,35 +473,35 @@ if com_select == "KIA":
   df_age=pd.read_csv("Data/KIA_age.csv")
   df_hash=pd.read_csv("Data/kia_popular_hashtags.csv")
   word_cloud="wordcloud/kia.jpeg"
-  df_em = pd.read_csv("Data/DINA.csv")
+  df_em = pd.read_csv("Data/emotion_data.csv")
   visi(df,df_age,df_hash,df_em)
 elif com_select == "B.M.W":
   df=pd.read_csv("Data/Merged_BMW.csv")
   df_age=pd.read_csv("Data/BMW_age.csv")
   df_hash=pd.read_csv("Data/BMW_popular_hashtags.csv")
   word_cloud="wordcloud/BWM.jpeg"
-  df_em = pd.read_csv("Data/DINA.csv")                                         
+  df_em = pd.read_csv("Data/emotion_data.csv")                                         
   visi(df,df_age,df_hash,df_em)
 elif com_select == "Mercedes Bens":
   df=pd.read_csv("Data/Merged_Mercedes.csv")
   df_age=pd.read_csv("Data/Mersedis_age.csv")
   df_hash=pd.read_csv("Data/mercedes_popular_hashtags.csv")
   word_cloud="wordcloud/Mercede.jpeg"
-  df_em = pd.read_csv("Data/DINA.csv")                                         
+  df_em = pd.read_csv("Data/emotion_data.csv")                                         
   visi(df,df_age,df_hash,df_em)
 elif com_select == "Hyundai":
   df=pd.read_csv("Data/Merged_Hyundai.csv")
   df_age=pd.read_csv("Data/Hyundai_age.csv")
   df_hash=pd.read_csv("Data/hyundai_popular_hashtags.csv")
   word_cloud="wordcloud/hyaduia.jpeg"
-  df_em = pd.read_csv("Data/DINA.csv")                                         
+  df_em = pd.read_csv("Data/emotion_data.csv")                                         
   visi(df,df_age,df_hash,df_em)
 elif com_select == "Peugeot":
   df=pd.read_csv("Data/Merged_Peugeot.csv")
   df_age=pd.read_csv("Data/Peugeot_age.csv")
   df_hash=pd.read_csv("Data/peuog_popular_hashtags.csv")
   word_cloud="wordcloud/peugeot.jpeg"
-  df_em = pd.read_csv("Data/DINA.csv")                                         
+  df_em = pd.read_csv("Data/emotion_data.csv")                                         
   visi(df,df_age,df_hash,df_em)
 elif com_select == "Search in All":
   buff, col_tx, buff2 = st.columns([1,3,1])
@@ -516,7 +516,7 @@ elif com_select == "Search in All":
     df_age=pd.read_csv("Data/Peugeot_age.csv")
     df_hash=pd.read_csv("Data/peuog_popular_hashtags.csv")
     word_cloud="wordcloud/peugeot.jpeg"
-    df_em = pd.read_csv("Data/DINA.csv")                                         
+    df_em = pd.read_csv("Data/emotion_data.csv")                                         
     visi(df,df_age,df_hash,df_em)
 
 else:
