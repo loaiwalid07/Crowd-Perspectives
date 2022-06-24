@@ -26,7 +26,7 @@ import os
 #nltk.download('stopwords')
 
 ############### Load Dataset ########################
-@st.cache(hash_funcs={"_thread.RLock": lambda _: None})
+#@st.cache(hash_funcs={"_thread.RLock": lambda _: None})
 def load_data():
     # path 
     path = './Data' 
@@ -39,7 +39,7 @@ def load_data():
  
     ##Download the dataset
     url = st.secrets["data_url"]
-    gdown.download_folder(url,quiet=True)
+    gdown.download_folder(url,quiet=True,use_cookies=False)
     return "Done Load"
 ##############################
 load_data()
