@@ -48,7 +48,7 @@ def load_data():
   from zipfile import ZipFile
   import os
   # loading the temp.zip and creating a zip object
-  with ZipFile(os.getcwd()+'\\'+'Data.zip', 'r') as zObject:
+  with ZipFile(os.getcwd()+'/'+'Data.zip', 'r') as zObject:
 
     # Extracting all the members of the zip
     # into a specific location.
