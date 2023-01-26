@@ -28,18 +28,34 @@ import os
 ############### Load Dataset ########################
 #@st.cache(hash_funcs={"_thread.RLock": lambda _: None})
 def load_data():
-    # path 
-    path = './Data' 
-    # Create the directory 
-    try: 
-        os.mkdir(path) 
-    except OSError as error: 
-        print(error)
-    print("Directory '% s' created" % path)
+    # # path 
+    # path = './Data' 
+    # # Create the directory 
+    # try: 
+    #     os.mkdir(path) 
+    # except OSError as error: 
+    #     print(error)
+    # print("Directory '% s' created" % path)
  
-    ##Download the dataset
-    url = st.secrets["data_url"]
-    gdown.download_folder(url,quiet=True,use_cookies=False)
+    # ##Download the dataset
+    # try:
+    #   url = st.secrets["data_url"]
+    # except:
+    #   url = "https://drive.google.com/drive/folders/1YuoS-eTbGpMOPoJiA-rtOZGWxiGE5qDb"
+    # gdown.download_folder(url,quiet=True,use_cookies=True)
+    
+    # importing the zipfile module
+  from zipfile import ZipFile
+  import os
+  # loading the temp.zip and creating a zip object
+  with ZipFile(os.getcwd()+'\\'+'Data.zip', 'r') as zObject:
+
+    # Extracting all the members of the zip
+    # into a specific location.
+    zObject.extractall(
+      path=os.getcwd())
+    
+    
     return "Done Load"
 ##############################
 load_data()
